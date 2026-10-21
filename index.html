@@ -185,7 +185,7 @@
           <span class="pink">伴走型チューター制度</span>も！
         </p>
         <div class="challenge-desc jump-in">
-          先輩デザイナーに相談しながら、<br>自身をつけて<br><span class="pink">ステップアップ！</span>
+          先輩デザイナーに相談しながら、<br>自信をつけて<br><span class="pink">ステップアップ！</span>
         </div>
       </div>
 
@@ -475,7 +475,7 @@
         <div class="faq-answer">
           <div class="answer-icon"><img src="./A.png"> </div>
           <div class="answer-text">
-            見るだけの日があっても大丈夫です！<br>家事や育児の合間に、<br>自分のペースで参加できます。
+            駆け出しデザイナーや、デザインを勉強中の方が気軽につながれるコミュニティです。
           </div>
         </div>
       </div>
@@ -488,7 +488,7 @@
         <div class="faq-answer">
           <div class="answer-icon"><img src="./A.png"> </div>
           <div class="answer-text">
-            見るだけの日があっても大丈夫<br>です！家事や育児の合間に、<br>自分のペースで参加できます。
+            最初は雰囲気を見るだけでもOKです。慣れてきたら、質問や雑談など参加しやすいところから関わってみてください。
           </div>
         </div>
       </div>
@@ -501,7 +501,7 @@
         <div class="faq-answer">
           <div class="answer-icon"><img src="./A.png"> </div>
           <div class="answer-text">
-            見るだけの日があっても大丈夫<br>です！家事や育児の合間に、<br>自分のペースで参加できます。
+            見るだけの日があっても大丈夫なので、家事や育児の合間に、自分のペースで参加できます。
           </div>
         </div>
       </div>
@@ -514,7 +514,7 @@
         <div class="faq-answer">
           <div class="answer-icon"><img src="./A.png"> </div>
           <div class="answer-text">
-            見るだけの日があっても大丈夫<br>です！家事や育児の合間に、<br>自分のペースで参加できます。
+            必須ではありません。参加できるタイミングで、お題に沿って制作にチャレンジできます。
           </div>
         </div>
       </div>
@@ -527,7 +527,7 @@
         <div class="faq-answer">
           <div class="answer-icon"><img src="./A.png"> </div>
           <div class="answer-text">
-            見るだけの日があっても大丈夫<br>です！家事や育児の合間に、<br>自分のペースで参加できます。
+            現在の参加費は0円です。
           </div>
         </div>
       </div>
@@ -540,7 +540,7 @@
         <div class="faq-answer">
           <div class="answer-icon"><img src="./A.png"> </div>
           <div class="answer-text">
-            見るだけの日があっても大丈夫<br>です！家事や育児の合間に、<br>自分のペースで参加できます。
+            「ミルコミュに参加する」ボタンからフォームへ進み、入力後に表示されるDiscordリンクから申請してください。
           </div>
         </div>
       </div>
@@ -578,7 +578,7 @@
         <div class="join-step fade-up">
           <div class="join-step-num">Step04</div>
           <div class="join-step-content">
-            <div class="join-step-title img"><img src="./join-img04.png"></div>
+            <div class="join-step-title img"><a href="https://x.com/ane5mama" target="_blank" rel="noopener"><img src="./join-img04.png" alt="ひーさんXへ"></a></div>
             <div class="join-step-desc">ひーさんのXをフォロー</div>
           </div>
         </div>
@@ -715,6 +715,60 @@
           dragMoved = false;
         }
       }, true);
+
+      /* 自動送り：4秒ごとに次のカードへ（最後まで行ったら最初に戻る）。
+         マウスを乗せている間・タッチ／ドラッグ中は止め、操作が終わってしばらくしたら再開する。
+         画面に見えていない間・タブが裏にある間は動かさない。「視差効果を減らす」設定の端末では自動送りしない */
+      const AUTO_INTERVAL = 4000;
+      const RESUME_DELAY = 6000;
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let autoTimer = null;
+      let resumeTimer = null;
+      let hovering = false;
+      let inView = false;
+
+      const currentIndex = () => {
+        const step = cards[0].offsetWidth + 16; /* カード幅 + gap */
+        return Math.round(voiceSlider.scrollLeft / step);
+      };
+
+      const goNext = () => {
+        const maxScroll = voiceSlider.scrollWidth - voiceSlider.clientWidth;
+        const atEnd = voiceSlider.scrollLeft >= maxScroll - 4 || currentIndex() >= cards.length - 1;
+        const target = atEnd ? cards[0] : cards[currentIndex() + 1];
+        /* scrollIntoView はページ全体も縦に動かしてしまうため、スライダーだけを横に動かす */
+        voiceSlider.scrollTo({ left: target.offsetLeft - cards[0].offsetLeft, behavior: 'smooth' });
+      };
+
+      const stopAuto = () => {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      };
+
+      const startAuto = () => {
+        stopAuto();
+        if (reduceMotion || hovering || isDragging || !inView || document.hidden) return;
+        autoTimer = setInterval(goNext, AUTO_INTERVAL);
+      };
+
+      /* 操作があったら止めて、しばらく操作がなければ再開 */
+      const pauseThenResume = () => {
+        stopAuto();
+        clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(startAuto, RESUME_DELAY);
+      };
+
+      voiceSlider.addEventListener('mouseenter', () => { hovering = true; stopAuto(); });
+      voiceSlider.addEventListener('mouseleave', () => { hovering = false; pauseThenResume(); });
+      voiceSlider.addEventListener('touchstart', pauseThenResume, { passive: true });
+      voiceSlider.addEventListener('mousedown', pauseThenResume);
+      voiceDotsWrap.addEventListener('click', pauseThenResume);
+      document.addEventListener('visibilitychange', () => (document.hidden ? stopAuto() : startAuto()));
+
+      new IntersectionObserver((entries) => {
+        inView = entries[0].isIntersecting;
+        if (inView) startAuto(); else stopAuto();
+      }, { threshold: 0.4 }).observe(voiceSlider);
     }
 
     /* ハンバーガーメニュー：開閉状態の同期、リンク選択時に自動で閉じる、Escキーで閉じる */

@@ -106,12 +106,16 @@ body.menu-open {
   box-shadow: 0 2px 12px rgba(244, 114, 182, 0.15);
 }
 
+/* ロゴは余白なしでヘッダーの高さぴったりに置く。
+   ヘッダーは高さ56px（下線2px込み）なので、下線にかからない内側の54pxいっぱいにする */
 .header-logo {
+  align-self: stretch;
   margin: 0;
-  height: 56px;
+  height: 100%;
 }
 
 .header-logo img {
+  display: block;
   height: 100%;
   width: auto;
 }
@@ -1254,7 +1258,7 @@ body.menu-open {
 .daily-section {
   background: url(./daily-section-bg.png);
   background-size: cover;
-  padding: 28px 20px;
+  padding: 28px 16px;
   margin-top: -80px;
   z-index: 7;
   padding-bottom: 56px;
@@ -1325,11 +1329,12 @@ body.menu-open {
   background-image: url(./timeline-img01.png);
   background-position: right;
   background-repeat: no-repeat;
+  padding-right: 38px;
 }
 
 .timeline-content.img02{
   background-image: url(./timeline-img02.png);
-  background-position: right;
+  background-position: right top;
   background-repeat: no-repeat;
 }
 
@@ -1452,7 +1457,6 @@ body.menu-open {
   width: 87px;
   height: 87px;
   border-radius: 50%;
-  background: var(--pink-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1681,6 +1685,16 @@ body.menu-open {
   margin: 0 auto;
 }
 
+/* 画像リンク（Step04「ひーさんXへ」）：画像の下に余白が出ないようブロック表示にする */
+.join-step-title.img a {
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.join-step-title.img a:hover {
+  opacity: 0.8;
+}
+
 .join-step-desc {
   font-size: 16px;
   font-weight: 700;
@@ -1734,6 +1748,7 @@ body.menu-open {
   overflow: hidden;
   display: flex;
   justify-content: space-around;
+  gap: 8px;
 }
 
 .price-card .left{
