@@ -1431,10 +1431,20 @@ section[id] {
 .community-section {
   padding: 0 20px 32px;
   color: var(--text-dark);
-  background: url(./community-section-bg.png) center top / cover no-repeat;
   margin-top: -50px;
   z-index: 6;
   font-weight: 700;
+}
+
+/* 上のセクションと重なる部分で背景の境目が出ないよう、上端をぼかす */
+.community-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url(./community-section-bg.png) center top / cover no-repeat;
+  -webkit-mask-image: linear-gradient(transparent 0, #000 50px);
+  mask-image: linear-gradient(transparent 0, #000 50px);
 }
 
 .community-section .section-title {
