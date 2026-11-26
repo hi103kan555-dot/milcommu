@@ -6,10 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ミルコミュ | ミルスクで繋がる学びのコミュニティ</title>
   <meta name="description" content="ミルコミュは、毎月定額で学べるオンラインコミュニティ。バナーデザインからSNS運用まで、楽しく学べる環境があります。" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preload" as="image" href="group_fv_header@2x.png" fetchpriority="high" />
+  <link rel="preload" as="image" href="img_fv_main@2x.png?v=20260725-245" fetchpriority="high" />
+  <link rel="preload" as="image" href="img_fv_logo_pukumoji@2x.png?v=20260725-245" fetchpriority="high" />
+  <link rel="stylesheet" href="style.css?v=20261029-001" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&family=Varela+Round&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Varela+Round&display=swap"
     rel="stylesheet">
 </head>
 
@@ -22,7 +26,7 @@
        ======================================== -->
     <header class="site-header">
       <div class="header-logo">
-        <img src="logo.png" alt="ミルコミュ" class="header-logo-text">
+        <img src="group_fv_header@2x.png" alt="ミルコミュ" class="header-logo-text" fetchpriority="high">
       </div>
       <div class="menu-wrapper">
         <input type="checkbox" id="menu-toggle" autocomplete="off" hidden>
@@ -44,12 +48,10 @@
             <li><a href="#faq">FAQ<span aria-hidden="true">&gt;</span></a></li>
             <li><a href="#message">ひーさんからのMessage<span aria-hidden="true">&gt;</span></a></li>
           </ul>
-          <img class="menu-rabbit" src="./img_menu_hikuusagi@2x.png" alt="">
+          <img class="menu-rabbit" src="./img_menu_hikuusagi@2x.png?v=20260725-246" alt="">
         </nav>
       </div>
     </header>
-
-    <div class="lp-body">
 
     <!-- ========================================
        HERO SECTION
@@ -65,7 +67,8 @@
         <div class="hero-card">AIデザイン</div>
       </div>
       <h1 class="hero-title">
-        <img src="title.png" alt="ミルコミュ" class="hero-icon">
+        <img src="img_fv_logo_pukumoji@2x.png?v=20260725-245" alt="ミルコミュ" class="hero-icon"
+          fetchpriority="high">
       </h1>
       <div class="stats-bar">
         <div class="stat-item">
@@ -90,9 +93,8 @@
       <div class="coment">ミルコミュは、駆け出しデザイナーが<br>一人で悩みを抱え込まずに、<br><span
           class="dark-pink">相談しあったり、励ましあったり</span>しながら<br><span class="dark-pink">少しずつ前に進める</span>コミュニティです</div>
       <div class="cta-block">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1tg_ukDFu417DFIfBPvZg4oQFs6Ldz17UHAbYfPPdbxIZsA/viewform?pli=1"
-          class="btn-cta">
-          ミルコミュに参加する <span class="arrow"><img src="cta-arrow.png" alt="矢印"></span>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1tg_ukDFu417DFIfBPvZg4oQFs6Ldz17UHAbYfPPdbxIZsA/viewform?pli=1" class="btn-cta" target="_blank" rel="noopener noreferrer">
+          <span class="cta-label">ミルコミュに参加する</span><span class="arrow"><img src="cta-arrow.png" alt="矢印"></span>
         </a>
       </div>
     </section>
@@ -100,9 +102,10 @@
     <!-- ========================================
        WORRY SECTION（お悩み）
        ======================================== -->
-    <section class="worry-section section">
+    <section class="worry-section section" id="worry">
       <div class="section-title-gray">
-        こんな<br><span class="large">お悩み</span>ありませんか？
+        <span class="title-line">こんな</span>
+        <span class="title-line title-main"><span class="large"><span class="em-char">お</span><span class="em-char">悩</span><span class="em-char">み</span></span><span class="title-question">ありませんか<span class="question-mark">？</span></span></span>
       </div>
       <div class="worry-list fade-up">
         <div class="worry-item-1">
@@ -119,11 +122,14 @@
         </div>
       </div>
     </section>
-    <section class="solution section">
+    <section class="solution section" id="about">
       <div class="solution-title">
-        こうした悩みに寄り添えるよう、<br>
-        <span class="large dark-pink">ミルコミュ</span>では<br><span class="large dark-pink">交流</span>・<span
-          class="large dark-pink">制作</span>・<span class="large dark-pink">学びの場</span>を<br>用意しています。
+        <span class="solution-line">こうした悩みに寄り添えるよう、</span>
+        <span class="solution-line"><span class="large dark-pink solution-brand">ミルコミュ</span>では</span>
+        <span class="solution-line"><span class="large dark-pink">交流</span><span
+          class="solution-dot dark-pink">・</span><span class="large dark-pink">制作</span><span
+          class="solution-dot dark-pink">・</span><span class="large dark-pink">学びの場</span>を</span>
+        <span class="solution-line">用意しています。</span>
       </div>
     </section>
 
@@ -132,8 +138,8 @@
        ======================================== -->
     <section class="points-section section" id="points">
       <div class="section-title">
-        <span class="large">ミルコミュ</span>が選ばれる<br />
-        <span class="num">3</span><span class="big">つのポイント</span>
+        <span class="points-title-line"><span class="large">ミルコミュ</span>が選ばれる</span>
+        <span class="points-title-line"><span class="num">3</span><span class="big">つのポイント</span></span>
       </div>
 
       <div class="point-card fade-up">
@@ -162,13 +168,13 @@
           イベントや<br />セミナーで学べる
         </h3>
         <p class="point-desc">
-          コミュニティ内のセミナーや、外部講師を招いたイベントも開催しています。デザインや営業、AI活用など、実践につながる学びに触れられます。
+          コミュニティ内のセミナーや、外部講師を招いたイベントも開催しています。<br>
+          デザインや営業、AI活用など、実践につながる学びに触れられます。
         </p>
       </div>
-      <div class="cta-block" style="margin-top: -40px; margin-bottom: 40px;">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1tg_ukDFu417DFIfBPvZg4oQFs6Ldz17UHAbYfPPdbxIZsA/viewform?pli=1"
-          class="btn-cta">
-          ミルコミュに参加する <span class="arrow"><img src="cta-arrow.png" alt="矢印"></span>
+      <div class="cta-block">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1tg_ukDFu417DFIfBPvZg4oQFs6Ldz17UHAbYfPPdbxIZsA/viewform?pli=1" class="btn-cta" target="_blank" rel="noopener noreferrer">
+          <span class="cta-label">ミルコミュに参加する</span><span class="arrow"><img src="cta-arrow.png" alt="矢印"></span>
         </a>
       </div>
     </section>
@@ -184,19 +190,19 @@
         <p class="challenge-subtitle">
           <span class="pink">伴走型チューター制度</span>も！
         </p>
-        <div class="challenge-desc jump-in">
+        <div class="challenge-desc">
           先輩デザイナーに相談しながら、<br>自信をつけて<br><span class="pink">ステップアップ！</span>
+          <img src="./mirusuku-text-after@2x.png" class="stepup-rabbit" alt="" aria-hidden="true">
         </div>
       </div>
 
-    </section>
-
-    <!-- ========================================
-       RECOMMEND SECTION（こんな人におすすめ）
-       ======================================== -->
-    <section class="milsk-section section">
+      <!-- ========================================
+         RECOMMEND BLOCK（こんな人におすすめ）
+         ミルスク背景と一体化するため、mirusuku-section内に統合。
+         ======================================== -->
+      <div class="milsk-section">
       <h2 class="milsk-title">こんな人に<span class="dark-pink">おすすめ！</span></h2>
-      <div class="milsk-features run-in">
+      <div class="milsk-features">
         <div class="milsk-feature">
           <div class="milsk-feature-icon"></div>
           <div class="milsk-feature-text">実案件の進め方が<br><span class="orange">合っているかわからない</span></div>
@@ -209,60 +215,60 @@
           <div class="milsk-feature-icon"></div>
           <div class="milsk-feature-text">スクールには戻らず<br><span class="orange">先輩に見てほしい</span></div>
         </div>
+        <img src="./milsk-feature-after@2x.png" class="milsk-running-rabbits" alt="" aria-hidden="true">
       </div>
       <div class="line-block">
-        <a href="https://lin.ee/YPIZv4y" class="line-cta">
+        <a href="https://lin.ee/YPIZv4y" class="line-cta" target="_blank" rel="noopener noreferrer">
           詳細を公式LINEで<br>チェックする <span class="arrow"><img src="line-arrow.png" alt="矢印"></span>
         </a>
 
       </div>
       <div class="add-text">※最新情報もLINEでお届けします</div>
+      </div>
     </section>
 
     <!-- ========================================
        COMMUNITY SECTION（コミュニティの雰囲気）
        ======================================== -->
     <section class="community-section section" id="mood">
-      <div class="section-title"><span class="img"><img src="./title.png"></span>の雰囲気</div>
+      <div class="section-title"><span class="img"><img src="./title@2x.png" alt="ミルコミュ"></span>の雰囲気</div>
       <div class="section-text"><span class="dark-pink">質問</span>しても、<span class="dark-pink">見る</span>だけでも、<span
           class="dark-pink">雑談も</span>OK</div>
-      <div class="img01"><img src="./community-section-img01.png"></div>
-      <div class="img01"><img src="./community-section-img02.png"></div>
-
+      <div class="mood-main"><img src="./img_mood_main@2x.png?v=20260724-235" alt="ミルコミュの雰囲気"></div>
       <div class="discord-intro">
         <div class="discord-intro-text">Discord部屋を<br>一部紹介します</div>
       </div>
       <div class="discord-grid">
         <div class="discord-card">
-          <div class="discord-icon"><img src="./discord-icon01.png"></div>
+          <div class="discord-icon"><img src="./discord-icon01@2x.png?v=20260725-244" alt=""></div>
           <div class="discord-label">本日の<br>ゆる目標宣言</div>
         </div>
         <div class="discord-card">
-          <div class="discord-icon"><img src="./discord-icon02.png"></div>
+          <div class="discord-icon"><img src="./discord-icon02@2x.png?v=20260725-244" alt=""></div>
           <div class="discord-label">ゆるゆる<br>雑談</div>
         </div>
         <div class="discord-card">
-          <div class="discord-icon"><img src="./discord-icon03.png"></div>
+          <div class="discord-icon"><img src="./discord-icon03@2x.png?v=20260725-244" alt=""></div>
           <div class="discord-label">気軽に質問<br>コーナー</div>
         </div>
         <div class="discord-card">
-          <div class="discord-icon"><img src="./discord-icon04.png"></div>
+          <div class="discord-icon"><img src="./discord-icon04@2x.png?v=20260725-244" alt=""></div>
           <div class="discord-label">ポート<br>フォリオ報告</div>
         </div>
         <div class="discord-card">
-          <div class="discord-icon"><img src="./discord-icon05.png"></div>
+          <div class="discord-icon"><img src="./discord-icon05@2x.png?v=20260725-244" alt=""></div>
           <div class="discord-label">実案件<br>獲得報告</div>
         </div>
         <div class="discord-card">
-          <div class="discord-icon"><img src="./discord-icon06.png"></div>
+          <div class="discord-icon"><img src="./discord-icon06@2x.png?v=20260725-244" alt=""></div>
           <div class="discord-label">デザイン情報<br>共有</div>
         </div>
         <div class="discord-card">
-          <div class="discord-icon"><img src="./discord-icon07.png"></div>
+          <div class="discord-icon"><img src="./discord-icon07@2x.png?v=20260725-244" alt=""></div>
           <div class="discord-label">黙々作業<br>部屋</div>
         </div>
         <div class="discord-card">
-          <div class="discord-icon"><img src="./discord-icon08.png"></div>
+          <div class="discord-icon"><img src="./discord-icon08@2x.png?v=20260725-244" alt=""></div>
           <div class="discord-label">雑談OK<br>語り部屋</div>
         </div>
       </div>
@@ -318,9 +324,9 @@
       <div class="voice-slider">
         <div class="voice-card fade-up">
           <div class="voice-header">
-            <div class="voice-avatar"><img class="voice-img" src="./voice-icon00.png"></div>
+            <div class="voice-avatar"><img src="./voice-01@2x.png?v=20260725-244" alt="参加者の声 01" class="voice-img"></div>
             <div>
-              <div class="voice-name">「一人じゃない」と<br>思える環境がある<br>ことが嬉しい</div>
+              <div class="voice-name">「一人じゃない」と思える環境があることが嬉しい</div>
               <div class="voice-age">yukariさん</div>
             </div>
           </div>
@@ -330,7 +336,7 @@
         </div>
         <div class="voice-card fade-up">
           <div class="voice-header">
-            <div class="voice-avatar"><img class="voice-img" src="./voice-icon01.png"></div>
+            <div class="voice-avatar"><img src="./voice-02@2x.png?v=20260725-244" alt="参加者の声 02" class="voice-img"></div>
             <div>
               <div class="voice-name">仲間と切磋琢磨できる日々に変わりました！</div>
               <div class="voice-age">くぼさん</div>
@@ -342,7 +348,7 @@
         </div>
         <div class="voice-card fade-up">
           <div class="voice-header">
-            <div class="voice-avatar"><img class="voice-img" src="./voice-icon02.png"></div>
+            <div class="voice-avatar"><img src="./voice-03@2x.png?v=20260725-244" alt="参加者の声 03" class="voice-img"></div>
             <div>
               <div class="voice-name">ミルコミュは寄り添ってくれる安心感があります！</div>
               <div class="voice-age">みかこさん</div>
@@ -354,7 +360,7 @@
         </div>
         <div class="voice-card fade-up">
           <div class="voice-header">
-            <div class="voice-avatar"><img class="voice-img" src="./voice-icon03.png"></div>
+            <div class="voice-avatar"><img src="./voice-04@2x.png?v=20260725-244" alt="参加者の声 04" class="voice-img"></div>
             <div>
               <div class="voice-name">制作を前向きに楽しめるようになりました！</div>
               <div class="voice-age">はるなさん</div>
@@ -366,31 +372,31 @@
         </div>
         <div class="voice-card fade-up">
           <div class="voice-header">
-            <div class="voice-avatar"><img class="voice-img" src="./voice-icon04.png"></div>
+            <div class="voice-avatar"><img src="./voice-05@2x.png?v=20260725-244" alt="参加者の声 05" class="voice-img"></div>
             <div>
               <div class="voice-name">出会えた方々との繋がりが確実にプラスになっています！</div>
               <div class="voice-age">alo.maさん</div>
             </div>
           </div>
           <p class="voice-text">
-            勉強会や毎月のイベントでの刺激はもちろんですが、みなさんの行動力が凄い！<br>おかげで私は刺激の多い毎日で行動し続けられてます。相談にのってくれる方もいて、背中を押してもらって…<br>出会えた方達との繋がりが確実にプラスになってます！
+            勉強会や毎月のイベントでの刺激はもちろんですが、みなさんの行動力が凄い！<br>おかげで私は刺激の多い毎日で行動し続けられています。相談にのってくれる方もいて、背中を押してもらって…<br>出会えた方達との繋がりが確実にプラスになってます！
           </p>
         </div>
         <div class="voice-card fade-up">
           <div class="voice-header">
-            <div class="voice-avatar"><img class="voice-img" src="./voice-icon05.png"></div>
+            <div class="voice-avatar"><img src="./voice-06@2x.png?v=20260725-244" alt="参加者の声 06" class="voice-img"></div>
             <div>
               <div class="voice-name">ママデザイナーの方が多く在籍していることが心強い！</div>
               <div class="voice-age">JUNKOさん</div>
             </div>
           </div>
           <p class="voice-text">
-            月１のデザインコンペ・添削があっていい。外部講義も魅力。<br>一人で勉強していると孤独を感じることが多いが、ママデザイナー駆け出しの方が多く在籍という時点で心強い。<br>ママデザイナー精鋭で、心強い！<br>これからもよろしくお願いします。
+            月1のデザインコンペ・添削があっていい。外部講義も魅力。<br>一人で勉強していると孤独を感じることが多いが、ママデザイナーの方が多く在籍しているという時点で心強い。<br>ママデザイナー精鋭で、心強い！これからもよろしくお願いします。
           </p>
         </div>
         <div class="voice-card fade-up">
           <div class="voice-header">
-            <div class="voice-avatar"><img class="voice-img" src="./voice-icon06.png"></div>
+            <div class="voice-avatar"><img src="./voice-07@2x.png?v=20260725-244" alt="参加者の声 07" class="voice-img"></div>
             <div>
               <div class="voice-name">常に誰かと学べる環境があることがミルコミュの強みです！</div>
               <div class="voice-age">HITOMIさん</div>
@@ -402,59 +408,63 @@
         </div>
         <div class="voice-card fade-up">
           <div class="voice-header">
-            <div class="voice-avatar"><img class="voice-img" src="./voice-icon07.png"></div>
+            <div class="voice-avatar"><img src="./voice-08@2x.png?v=20260725-244" alt="参加者の声 08" class="voice-img"></div>
             <div>
               <div class="voice-name">悩んだ時に、相談にのってくれる仲間ができました！</div>
               <div class="voice-age">ぴょんさん</div>
             </div>
           </div>
           <p class="voice-text">
-            アットホームな環境で、みなさん本当にあたたかいです。<br>悩んだ時、困った時に相談にのってくれる仲間がいる心強さ。<br>外部講師による勉強会、コミュ内企画、オフ会もあり、楽しく切磋琢磨しながらスキルアップができます！私の居場所になりました！
+            アットホームな環境で、みなさん本当にあたたかいです。<br>悩んだ時、困った時に相談にのってくれる仲間がいる心強さ。<br>外部講師による勉強会、コミュ内企画、オフ会もあり、楽しく切磋琢磨しながらスキルアップができます！<br>私の居場所になりました！
           </p>
         </div>
         <div class="voice-card fade-up">
           <div class="voice-header">
-            <div class="voice-avatar"><img class="voice-img" src="./voice-icon08.png"></div>
+            <div class="voice-avatar"><img src="./voice-09@2x.png?v=20260725-244" alt="参加者の声 09" class="voice-img"></div>
             <div>
               <div class="voice-name">たわいないことでも気軽に相談ができることが魅力です！</div>
               <div class="voice-age">Miiさん</div>
             </div>
           </div>
           <p class="voice-text">
-            ミルコミュは、分からないことはもちろん、たわいないことでも気軽に相談できることが魅力に思います。
-            また外部講師の勉強会、SNSやAI、デザインツールの勉強会など生配信をしていただけることも！！<br>何が1番すごいって全部無料です！<br>毎月たくさん学べて、自身の成長を感じます！！
+            ミルコミュは、分からないことはもちろん、たわいないことでも気軽に相談できることが魅力に思います。<br>また外部講師の勉強会、SNSやAI、デザインツールの勉強会など生配信をしていただけることも！！<br>何が1番すごいって全部無料です！毎月たくさん学べて、自身の成長を感じます！！
           </p>
         </div>
         <div class="voice-card fade-up">
           <div class="voice-header">
-            <div class="voice-avatar"><img class="voice-img" src="./voice-icon09.png"></div>
+            <div class="voice-avatar"><img src="./voice-10@2x.png?v=20260725-244" alt="参加者の声 10" class="voice-img"></div>
             <div>
               <div class="voice-name">ミルコミュは頑張る原動力になっています！</div>
               <div class="voice-age">らっこさん</div>
             </div>
           </div>
           <p class="voice-text">
-            駆け出しで一歩前進するために頑張っている方が多くいます！<br>だからこそ、わからないこと、知りたいことを相談しやすいです。<br>有料級の勉強会もたくさんあり、これで無料？と驚きの毎日！笑<br>ミルコミュは頑張る原動力になっていて参加して本当に良かったと思っています！
+            駆け出しで一歩前進するために頑張っている方が多くいます！<br>だからこそ、わからないこと、知りたいことを相談しやすいです。有料級の勉強会もたくさんあり、これで無料？と驚きの毎日！笑<br>ミルコミュは頑張る原動力になっていて参加して本当に良かったと思っています！
           </p>
         </div>
         <div class="voice-card fade-up">
           <div class="voice-header">
-            <div class="voice-avatar"><img class="voice-img" src="./voice-icon10.png"></div>
+            <div class="voice-avatar"><img src="./voice-11@2x.png?v=20260725-244" alt="参加者の声 11" class="voice-img"></div>
             <div>
               <div class="voice-name">皆が目標に向かって行動しているので刺激をもらえます！</div>
               <div class="voice-age">ちょこんさん</div>
             </div>
           </div>
           <p class="voice-text">
-            悩んだ時も質問すると誰かが反応してくれるので一人で抱え込むようなこともないので駆け出しデザイナーさんに本当おすすめします。また添削会や外部講師による勉強会もあるので常に学べる環境があり、不安も解消できます。何より運営さん、メンバーが皆さん素敵なのですごく居心地が良く毎日楽しいです。
+            悩んだ時も質問すると誰かが反応してくれるので一人で抱え込むようなこともないので駆け出しデザイナーさんに本当おすすめします。<br>また添削会や外部講師による勉強会もあるので常に学べる環境があり、不安も解消できます。何より運営さん、メンバーが皆さん素敵なので、ここに居心地が良く毎日楽しいです。
           </p>
         </div>
       </div>
-      <div class="voice-dots"></div>
-      <div class="cta-block" style="margin-bottom: 40px;">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1tg_ukDFu417DFIfBPvZg4oQFs6Ldz17UHAbYfPPdbxIZsA/viewform?pli=1"
-          class="btn-cta">
-          ミルコミュに参加する <span class="arrow"><img src="cta-arrow.png" alt="矢印"></span>
+      <div class="voice-dots">
+        <span class="voice-dot active"></span>
+        <span class="voice-dot"></span>
+        <span class="voice-dot"></span>
+        <span class="voice-dot"></span>
+        <span class="voice-dot"></span>
+      </div>
+      <div class="cta-block">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1tg_ukDFu417DFIfBPvZg4oQFs6Ldz17UHAbYfPPdbxIZsA/viewform?pli=1" class="btn-cta" target="_blank" rel="noopener noreferrer">
+          <span class="cta-label">ミルコミュに参加する</span><span class="arrow"><img src="cta-arrow.png" alt="矢印"></span>
         </a>
       </div>
     </section>
@@ -466,79 +476,79 @@
       <div class="section-title">
         FAQ
       </div>
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <div class="faq-q-badge"><img src="./Q.png"></div>
+      <div class="faq-item open">
+        <div class="faq-question">
+          <div class="faq-q-badge"><img src="./Q.png" alt="Q"></div>
           <div class="faq-q-text">デザイン初心者でも参加できますか？</div>
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          <div class="answer-icon"><img src="./A.png"> </div>
+          <div class="answer-icon"><img src="./A.png" alt="A"> </div>
           <div class="answer-text">
             駆け出しデザイナーや、デザインを勉強中の方が気軽につながれるコミュニティです。
           </div>
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <div class="faq-q-badge"><img src="./Q.png"></div>
+        <div class="faq-question">
+          <div class="faq-q-badge"><img src="./Q.png" alt="Q"></div>
           <div class="faq-q-text">見るだけの参加でも<br>大丈夫ですか？</div>
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          <div class="answer-icon"><img src="./A.png"> </div>
+          <div class="answer-icon"><img src="./A.png" alt="A"> </div>
           <div class="answer-text">
             最初は雰囲気を見るだけでもOKです。慣れてきたら、質問や雑談など参加しやすいところから関わってみてください。
           </div>
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <div class="faq-q-badge"><img src="./Q.png"></div>
+        <div class="faq-question">
+          <div class="faq-q-badge"><img src="./Q.png" alt="Q"></div>
           <div class="faq-q-text">ママでも参加しやすい<br>ですか？</div>
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          <div class="answer-icon"><img src="./A.png"> </div>
+          <div class="answer-icon"><img src="./A.png" alt="A"> </div>
           <div class="answer-text">
             見るだけの日があっても大丈夫なので、家事や育児の合間に、自分のペースで参加できます。
           </div>
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <div class="faq-q-badge"><img src="./Q.png"></div>
+        <div class="faq-question">
+          <div class="faq-q-badge"><img src="./Q.png" alt="Q"></div>
           <div class="faq-q-text">バナーチャレンジは<br>必ず参加が必要ですか？</div>
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          <div class="answer-icon"><img src="./A.png"> </div>
+          <div class="answer-icon"><img src="./A.png" alt="A"> </div>
           <div class="answer-text">
             必須ではありません。参加できるタイミングで、お題に沿って制作にチャレンジできます。
           </div>
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <div class="faq-q-badge"><img src="./Q.png"></div>
+        <div class="faq-question">
+          <div class="faq-q-badge"><img src="./Q.png" alt="Q"></div>
           <div class="faq-q-text">参加費はかかりますか？</div>
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          <div class="answer-icon"><img src="./A.png"> </div>
+          <div class="answer-icon"><img src="./A.png" alt="A"> </div>
           <div class="answer-text">
             現在の参加費は0円です。
           </div>
         </div>
       </div>
       <div class="faq-item">
-        <div class="faq-question" onclick="toggleFaq(this)">
-          <div class="faq-q-badge"><img src="./Q.png"></div>
+        <div class="faq-question">
+          <div class="faq-q-badge"><img src="./Q.png" alt="Q"></div>
           <div class="faq-q-text">参加方法は？</div>
           <div class="faq-toggle"></div>
         </div>
         <div class="faq-answer">
-          <div class="answer-icon"><img src="./A.png"> </div>
+          <div class="answer-icon"><img src="./A.png" alt="A"> </div>
           <div class="answer-text">
             「ミルコミュに参加する」ボタンからフォームへ進み、入力後に表示されるDiscordリンクから申請してください。
           </div>
@@ -555,37 +565,41 @@
       </div>
       <div class="join-steps">
         <div class="join-step fade-up">
-          <div class="join-step-num">Step01</div>
+          <div class="join-step-num"><span>Step01</span></div>
           <div class="join-step-content">
-            <div class="join-step-title"><img src="./join-img01.png"> </div>
+            <div class="join-step-title"><img src="./join-img01@2x.png?v=20260725-244" alt="ミルコミュに参加するボタン"> </div>
             <div class="join-step-desc">このページ内の<br>参加するボタンをタップ！</div>
           </div>
         </div>
         <div class="join-step fade-up">
-          <div class="join-step-num">Step02</div>
+          <div class="join-step-num"><span>Step02</span></div>
           <div class="join-step-content">
-            <div class="join-step-title"><img src="./join-img02.png"></div>
+            <div class="join-step-title"><img src="./join-img02@2x.png?v=20260725-244" alt="Googleフォーム"></div>
             <div class="join-step-desc">Googleフォームに必要事項を<br>入力・送信</div>
           </div>
         </div>
         <div class="join-step fade-up">
-          <div class="join-step-num">Step03</div>
+          <div class="join-step-num"><span>Step03</span></div>
           <div class="join-step-content">
-            <div class="join-step-title"><img src="./join-img03.png"></div>
+            <div class="join-step-title"><img src="./join-img03.png" alt="Discord"></div>
             <div class="join-step-desc">Googleフォーム送信完了後<br>Discordの申請</div>
           </div>
         </div>
         <div class="join-step fade-up">
-          <div class="join-step-num">Step04</div>
+          <div class="join-step-num"><span>Step04</span></div>
           <div class="join-step-content">
-            <div class="join-step-title img"><a href="https://x.com/ane5mama" target="_blank" rel="noopener"><img src="./join-img04.png" alt="ひーさんXへ"></a></div>
+            <div class="join-step-title">
+              <a class="join-x-link" href="https://x.com/ane5mama" target="_blank" rel="noopener noreferrer">
+                <img src="./join-img04@2x.png?v=20260725-244" alt="ひーさんXへ">
+              </a>
+            </div>
             <div class="join-step-desc">ひーさんのXをフォロー</div>
           </div>
         </div>
         <div class="join-step fade-up">
-          <div class="join-step-num">Step05</div>
+          <div class="join-step-num"><span>Step05</span></div>
           <div class="join-step-content">
-            <div class="join-step-title"><img src="./join-img05.png"></div>
+            <div class="join-step-title"><img src="./join-img05@2x.png?v=20260725-244" alt="ミルコミュの仲間たち"></div>
             <div class="join-step-desc">運営がフォーム内容を確認後、<br>Discordに参加！</div>
           </div>
         </div>
@@ -597,29 +611,27 @@
        ======================================== -->
     <section class="price-section section" id="message">
       <div class="section-title">
-        主催者ひーさんからの<br>Message</span>
+        主催者ひーさんからの<br>Message
       </div>
       <div class="sub-text">気軽に情報共有などができる場を<br>提供したいと考えました！<br>日本一ハードルの低いcommunityです。<br>一緒に悩んで一緒に成長しましょう！</div>
       <div class="price-card fade-up">
         <div class="left">
-          <div class="icon"><img src="./price-icon.png"></div>
+          <div class="icon"><img src="./message-icon@2x.png?v=20260725-244" alt="主催者ひーさん"></div>
           <div class="sns">
-            <div><a href="https://x.com/ane5mama"><img src="./X-icon.png"></a></div>
-            <div><a href="https://note.com/hito_miru0303"><img src="./note-icon.png"></a></div>
+            <div><a href="https://x.com/ane5mama" target="_blank" rel="noopener noreferrer"><img src="./X-icon.png" alt="ひーさんのX"></a></div>
+            <div><a href="https://note.com/hito_miru0303" target="_blank" rel="noopener noreferrer"><img src="./note-icon.png" alt="ひーさんのnote"></a></div>
           </div>
         </div>
         <div class="right">
-          <div class="price-plan-name">ひーさん</div>
-          <div class="price-amount">
-            AIを活用した<br>Webデザイン・LP制作を行うデザイナー。<br>営業経験を活かし、駆け出しデザイナーのために<br>気軽に相談できる場所として「ミルコミュ」を運営。</div>
+         <div class="price-plan-name">ひーさん</div>
+        <div class="price-amount">AIを活用した<br>Webデザイン・LP制作を行うデザイナー。<br>営業経験を活かし、駆け出しデザイナーのために<br>気軽に相談できる場所として「ミルコミュ」を運営。</div> 
         </div>
-
+        
       </div>
       <div class="cta-text">ミルコミュで、<br>一緒に進んでみませんか？</div>
-      <div class="cta-block" style="margin-bottom: 40px;">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1tg_ukDFu417DFIfBPvZg4oQFs6Ldz17UHAbYfPPdbxIZsA/viewform?pli=1"
-          class="btn-cta">
-          ミルコミュに参加する <span class="arrow"><img src="cta-arrow.png" alt="矢印"></span>
+      <div class="cta-block">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1tg_ukDFu417DFIfBPvZg4oQFs6Ldz17UHAbYfPPdbxIZsA/viewform?pli=1" class="btn-cta" target="_blank" rel="noopener noreferrer">
+          <span class="cta-label">ミルコミュに参加する</span><span class="arrow"><img src="cta-arrow.png" alt="矢印"></span>
         </a>
       </div>
     </section>
@@ -628,12 +640,10 @@
        FOOTER
        ======================================== -->
     <footer class="site-footer">
-      <div class="footer-logo"><img src="./footer-icon.png"></div>
-      <a href="./privacy/">プライバシーポリシー</a>
+      <div class="footer-logo"><img src="./footer-logo@2x.png?v=20260725-244" alt="ミルコミュ"></div>
+        <a href="./privacy/privacy.html">プライバシーポリシー</a>
       <p class="footer-copy">© 2026 Milcommu.</p>
     </footer>
-
-    </div><!-- /.lp-body -->
 
   </div><!-- /.lp-wrapper -->
 
@@ -647,8 +657,12 @@
       item.classList.toggle('open');
     }
 
+    document.querySelectorAll('.faq-question').forEach((question) => {
+      question.addEventListener('click', () => toggleFaq(question));
+    });
+
     /* スクロールアニメーション */
-    const fadeEls = document.querySelectorAll('.fade-up, .jump-in, .run-in');
+    const fadeEls = document.querySelectorAll('.fade-up');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -660,134 +674,208 @@
 
     fadeEls.forEach(el => observer.observe(el));
 
-    /* 参加者の声スライダー：ドット連動（カード枚数ぶんドットを自動生成） */
+    /* 「ステップアップ！」のミルラビ：表示時に一度だけジャンプ */
+    const stepupRabbit = document.querySelector('.stepup-rabbit');
+    if (stepupRabbit) {
+      const stepupObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('rabbit-jump');
+            stepupObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      stepupObserver.observe(stepupRabbit);
+    }
+
+    /* 手をつないだ伴走ミルラビ：表示時に一度だけ一緒に駆ける */
+    const runningRabbits = document.querySelector('.milsk-running-rabbits');
+    if (runningRabbits) {
+      runningRabbits.classList.add('run-ready');
+      const runningRabbitsObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-running');
+            runningRabbitsObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.9 });
+
+      runningRabbitsObserver.observe(runningRabbits);
+    }
+
+    /* 参加者の声：transformベースの一方向・無限カルーセル */
     const voiceSlider = document.querySelector('.voice-slider');
     const voiceDotsWrap = document.querySelector('.voice-dots');
     if (voiceSlider && voiceDotsWrap) {
-      const cards = voiceSlider.querySelectorAll('.voice-card');
-      const voiceDots = Array.from(cards).map((card, i) => {
+      const cards = Array.from(voiceSlider.querySelectorAll('.voice-card'));
+      const track = document.createElement('div');
+      track.className = 'voice-track';
+      const voiceViewport = document.createElement('div');
+      voiceViewport.className = 'voice-viewport';
+      cards.forEach((card) => track.appendChild(card));
+
+      if (cards.length > 1) {
+        const firstClone = cards[0].cloneNode(true);
+        const lastClone = cards[cards.length - 1].cloneNode(true);
+        firstClone.setAttribute('aria-hidden', 'true');
+        lastClone.setAttribute('aria-hidden', 'true');
+        firstClone.classList.add('voice-card-clone');
+        lastClone.classList.add('voice-card-clone');
+        track.insertBefore(lastClone, track.firstChild);
+        track.appendChild(firstClone);
+      }
+
+      voiceViewport.appendChild(track);
+      voiceSlider.replaceChildren(voiceViewport);
+      const loopCards = Array.from(track.children);
+      let currentIndex = 1;
+      let autoTimer = null;
+      let pointerStartX = null;
+
+      voiceDotsWrap.innerHTML = '';
+      cards.forEach((_, i) => {
         const dot = document.createElement('span');
-        dot.className = 'voice-dot' + (i === 0 ? ' active' : '');
+        dot.className = `voice-dot${i === 0 ? ' active' : ''}`;
         dot.addEventListener('click', () => {
-          card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+          currentIndex = i + 1;
+          moveVoice(true);
+          restartAutoVoice();
         });
         voiceDotsWrap.appendChild(dot);
-        return dot;
       });
-      voiceSlider.addEventListener('scroll', () => {
-        const step = cards[0].offsetWidth + 16; /* カード幅 + gap */
-        const index = Math.round(voiceSlider.scrollLeft / step);
-        voiceDots.forEach((dot, i) => dot.classList.toggle('active', i === index));
-      });
+      const voiceDots = voiceDotsWrap.querySelectorAll('.voice-dot');
 
-      /* PC（マウス操作）向け：ドラッグでスライドできるようにする */
-      let isDragging = false;
-      let dragMoved = false;
-      let dragStartX = 0;
-      let dragStartScrollLeft = 0;
+      function setActiveDot() {
+        const realIndex = (((currentIndex - 1) % cards.length) + cards.length) % cards.length;
+        voiceDots.forEach((dot, i) => dot.classList.toggle('active', i === realIndex));
+      }
 
-      voiceSlider.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        dragMoved = false;
-        voiceSlider.classList.add('dragging');
-        dragStartX = e.pageX;
-        dragStartScrollLeft = voiceSlider.scrollLeft;
-      });
+      function moveVoice(animate = true) {
+        track.classList.toggle('no-transition', !animate);
+        const target = loopCards[currentIndex];
+        if (!target) return;
+        const centeredLeft = target.offsetLeft - (voiceViewport.clientWidth - target.offsetWidth) / 2;
+        track.style.transform = `translate3d(${-centeredLeft}px, 0, 0)`;
+        loopCards.forEach((card) => card.classList.toggle('is-current', card === target));
+        setActiveDot();
+      }
 
-      window.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        const delta = e.pageX - dragStartX;
-        if (Math.abs(delta) > 3) dragMoved = true;
-        voiceSlider.scrollLeft = dragStartScrollLeft - delta;
-      });
+      function goNextVoice() {
+        if (cards.length <= 1) return;
+        currentIndex += 1;
+        moveVoice(true);
+      }
 
-      window.addEventListener('mouseup', () => {
-        if (!isDragging) return;
-        isDragging = false;
-        voiceSlider.classList.remove('dragging');
-      });
+      function goPrevVoice() {
+        if (cards.length <= 1) return;
+        currentIndex -= 1;
+        moveVoice(true);
+      }
 
-      /* ドラッグ直後にカード内のリンク等をクリック扱いしてしまわないようにする */
-      voiceSlider.addEventListener('click', (e) => {
-        if (dragMoved) {
-          e.preventDefault();
-          e.stopPropagation();
-          dragMoved = false;
+      track.addEventListener('transitionend', (event) => {
+        if (event.propertyName !== 'transform') return;
+
+        if (currentIndex === cards.length + 1) {
+          currentIndex = 1;
+          moveVoice(false);
+          track.offsetHeight;
+          track.classList.remove('no-transition');
+        } else if (currentIndex === 0) {
+          currentIndex = cards.length;
+          moveVoice(false);
+          track.offsetHeight;
+          track.classList.remove('no-transition');
         }
-      }, true);
+      });
 
-      /* 自動送り：4秒ごとに次のカードへ（最後まで行ったら最初に戻る）。
-         マウスを乗せている間・タッチ／ドラッグ中は止め、操作が終わってしばらくしたら再開する。
-         画面に見えていない間・タブが裏にある間は動かさない。「視差効果を減らす」設定の端末では自動送りしない */
-      const AUTO_INTERVAL = 4000;
-      const RESUME_DELAY = 6000;
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      let autoTimer = null;
-      let resumeTimer = null;
-      let hovering = false;
-      let inView = false;
+      function startAutoVoice() {
+        if (cards.length <= 1) return;
+        window.clearInterval(autoTimer);
+        autoTimer = window.setInterval(goNextVoice, 8500);
+      }
 
-      const currentIndex = () => {
-        const step = cards[0].offsetWidth + 16; /* カード幅 + gap */
-        return Math.round(voiceSlider.scrollLeft / step);
-      };
+      function restartAutoVoice() {
+        window.clearInterval(autoTimer);
+        startAutoVoice();
+      }
 
-      const goNext = () => {
-        const maxScroll = voiceSlider.scrollWidth - voiceSlider.clientWidth;
-        const atEnd = voiceSlider.scrollLeft >= maxScroll - 4 || currentIndex() >= cards.length - 1;
-        const target = atEnd ? cards[0] : cards[currentIndex() + 1];
-        /* scrollIntoView はページ全体も縦に動かしてしまうため、スライダーだけを横に動かす */
-        voiceSlider.scrollTo({ left: target.offsetLeft - cards[0].offsetLeft, behavior: 'smooth' });
-      };
+      voiceSlider.addEventListener('pointerdown', (event) => {
+        pointerStartX = event.clientX;
+        window.clearInterval(autoTimer);
+      });
 
-      const stopAuto = () => {
-        clearInterval(autoTimer);
-        autoTimer = null;
-      };
+      voiceSlider.addEventListener('pointerup', (event) => {
+        if (pointerStartX !== null) {
+          const distance = event.clientX - pointerStartX;
+          if (distance < -35) goNextVoice();
+          if (distance > 35) goPrevVoice();
+        }
+        pointerStartX = null;
+        restartAutoVoice();
+      });
 
-      const startAuto = () => {
-        stopAuto();
-        if (reduceMotion || hovering || isDragging || !inView || document.hidden) return;
-        autoTimer = setInterval(goNext, AUTO_INTERVAL);
-      };
+      voiceSlider.addEventListener('pointercancel', () => {
+        pointerStartX = null;
+        restartAutoVoice();
+      });
 
-      /* 操作があったら止めて、しばらく操作がなければ再開 */
-      const pauseThenResume = () => {
-        stopAuto();
-        clearTimeout(resumeTimer);
-        resumeTimer = setTimeout(startAuto, RESUME_DELAY);
-      };
+      window.requestAnimationFrame(() => moveVoice(false));
+      window.addEventListener('resize', () => moveVoice(false), { passive: true });
 
-      voiceSlider.addEventListener('mouseenter', () => { hovering = true; stopAuto(); });
-      voiceSlider.addEventListener('mouseleave', () => { hovering = false; pauseThenResume(); });
-      voiceSlider.addEventListener('touchstart', pauseThenResume, { passive: true });
-      voiceSlider.addEventListener('mousedown', pauseThenResume);
-      voiceDotsWrap.addEventListener('click', pauseThenResume);
-      document.addEventListener('visibilitychange', () => (document.hidden ? stopAuto() : startAuto()));
+      /* カードが画面にしっかり入るまでは1人目で待機し、読み始めてから自動送りを開始。 */
+      const voiceStartObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          startAutoVoice();
+          voiceStartObserver.disconnect();
+        });
+      }, { threshold: 0.6 });
 
-      new IntersectionObserver((entries) => {
-        inView = entries[0].isIntersecting;
-        if (inView) startAuto(); else stopAuto();
-      }, { threshold: 0.4 }).observe(voiceSlider);
+      voiceStartObserver.observe(voiceSlider);
     }
-
-    /* ハンバーガーメニュー：開閉状態の同期、リンク選択時に自動で閉じる、Escキーで閉じる */
+  </script>
+  <script>
     (() => {
       const menuToggle = document.getElementById('menu-toggle');
       const menuLinks = document.querySelectorAll('.menu a[href^="#"]');
+      const menu = document.querySelector('.menu');
+      const menuRabbit = document.querySelector('.menu-rabbit');
+
       if (!menuToggle) return;
+
+      /* 画面が低いとメニューを開いた時点ではミルラビが隠れるため、全身が見えてから揺らす。 */
+      const swayRabbitIfVisible = () => {
+        if (!menu || !menuRabbit || !menuToggle.checked) return;
+        if (menuRabbit.getBoundingClientRect().bottom <= menu.getBoundingClientRect().bottom + 1) {
+          menuRabbit.classList.add('is-swaying');
+        }
+      };
 
       const syncMenuState = () => {
         document.body.classList.toggle('menu-open', menuToggle.checked);
+        if (!menuRabbit) return;
+        if (menuToggle.checked) {
+          swayRabbitIfVisible();
+        } else {
+          menuRabbit.classList.remove('is-swaying');
+        }
       };
+
+      if (menu) {
+        menu.addEventListener('scroll', swayRabbitIfVisible, { passive: true });
+      }
 
       const closeMenu = () => {
         menuToggle.checked = false;
         syncMenuState();
       };
 
-      menuToggle.addEventListener('change', syncMenuState);
+      closeMenu();
+      window.addEventListener('pageshow', closeMenu);
 
+      menuToggle.addEventListener('change', syncMenuState);
       menuLinks.forEach((link) => {
         link.addEventListener('click', () => {
           closeMenu();
@@ -799,6 +887,30 @@
           closeMenu();
         }
       });
+    })();
+  </script>
+  <script>
+    (() => {
+      const lpWrapper = document.querySelector('.lp-wrapper');
+      if (!lpWrapper) return;
+
+      const baseWidth = 375;
+      const mobileMaxWidth = 430;
+
+      const fitMobileCanvas = () => {
+        const viewportWidth = document.documentElement.clientWidth;
+        /* 430pxまでは画面幅に合わせ、それ以上では430px幅を維持する。 */
+        const renderedWidth = Math.min(viewportWidth, mobileMaxWidth);
+        const scale = renderedWidth / baseWidth;
+        lpWrapper.style.zoom = scale;
+        lpWrapper.style.setProperty(
+          '--mobile-menu-height',
+          `${window.innerHeight / scale - 56}px`
+        );
+      };
+
+      fitMobileCanvas();
+      window.addEventListener('resize', fitMobileCanvas, { passive: true });
     })();
   </script>
 

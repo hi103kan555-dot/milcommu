@@ -1,6 +1,6 @@
 :root {
-  --pink: #ed008f;
-  --pale-pink: #ffedf3;
+  --pink: #dc008d;
+  --pale-pink: #fee4eb;
   --brown: #3d1d13;
   --orange: #ffbd45;
   --font-main: "M PLUS Rounded 1c", sans-serif;
@@ -56,8 +56,7 @@ body.privacy-menu-open {
   display: block;
   width: 100%;
   height: 56px;
-  object-fit: contain;
-  object-position: left center;
+  object-fit: cover;
 }
 
 .privacy-menu-icon {
@@ -162,13 +161,14 @@ body.privacy-menu-open {
   border-radius: 11px;
   background: #fff;
   color: var(--pink);
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   text-decoration: none;
 }
 
 .privacy-menu a span {
-  font-family: sans-serif;
-  font-size: 22px;
+  font-size: 23px;
 }
 
 .privacy-menu-rabbit {
@@ -184,7 +184,8 @@ body.privacy-menu-open {
   transform-origin: 50% 0;
 }
 
-#privacy-menu-toggle:checked ~ .privacy-menu .privacy-menu-rabbit {
+/* メニュー内でミルラビが見えたタイミングで、JSが is-swaying を付けて2回揺らす */
+.privacy-menu-rabbit.is-swaying {
   animation: privacy-menu-rabbit-sway .9s ease-in-out .18s 2 both;
 }
 
@@ -315,7 +316,39 @@ body.privacy-menu-open {
     transition: none;
   }
 
-  #privacy-menu-toggle:checked ~ .privacy-menu .privacy-menu-rabbit {
+  .privacy-menu-rabbit.is-swaying {
     animation: none;
   }
 }
+
+/* 320〜430pxは375px基準のデザイン比率でフィット。 */
+.privacy-menu {
+  height: var(--mobile-menu-height, calc(100dvh - 56px));
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 430px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .privacy-page {
+    width: 375px;
+    max-width: none;
+    box-shadow: none;
+  }
+
+  .privacy-menu {
+    top: 56px;
+    left: 0;
+    width: 375px;
+    height: var(--mobile-menu-height, calc(100dvh - 56px));
+    transform: translateY(-8px);
+  }
+
+  #privacy-menu-toggle:checked ~ .privacy-menu {
+    transform: translateY(0);
+  }
+}
+

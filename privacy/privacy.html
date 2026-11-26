@@ -6,20 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>プライバシーポリシー | ミルコミュ</title>
   <meta name="description" content="ミルコミュのプライバシーポリシーです。">
-  <link rel="preload" as="image" href="../logo.png" fetchpriority="high">
+  <link rel="preload" as="image" href="../group_fv_header@2x.png" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&family=Varela+Round&display=swap"
+    href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Varela+Round&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="privacy.css?v=20260725-009">
+  <link rel="stylesheet" href="privacy.css?v=20261028-008">
 </head>
 
 <body>
   <div class="privacy-page">
     <header class="privacy-header">
       <a class="privacy-header-logo" href="../index.html" aria-label="ミルコミュ トップページへ">
-        <img src="../logo.png" alt="ミルコミュ" fetchpriority="high">
+        <img src="../group_fv_header@2x.png" alt="ミルコミュ" fetchpriority="high">
       </a>
 
       <div class="privacy-menu-wrapper">
@@ -101,7 +101,7 @@
     </main>
 
     <footer class="privacy-footer">
-      <a href="../index.html"><img src="../footer-icon.png" alt="ミルコミュ"></a>
+      <a href="../index.html"><img src="../footer-logo@2x.png" alt="ミルコミュ"></a>
       <p>プライバシーポリシー</p>
       <small>© 2026 Milcommu.</small>
     </footer>
@@ -110,24 +110,69 @@
   <script>
     (() => {
       const toggle = document.getElementById('privacy-menu-toggle');
+      const menu = document.querySelector('.privacy-menu');
+      const menuRabbit = document.querySelector('.privacy-menu-rabbit');
       if (!toggle) return;
+
+      /* 画面が低いとメニューを開いた時点ではミルラビが隠れるため、全身が見えてから揺らす。 */
+      const swayRabbitIfVisible = () => {
+        if (!menu || !menuRabbit || !toggle.checked) return;
+        if (menuRabbit.getBoundingClientRect().bottom <= menu.getBoundingClientRect().bottom + 1) {
+          menuRabbit.classList.add('is-swaying');
+        }
+      };
+
+      const syncMenuState = () => {
+        document.body.classList.toggle('privacy-menu-open', toggle.checked);
+        if (!menuRabbit) return;
+        if (toggle.checked) {
+          swayRabbitIfVisible();
+        } else {
+          menuRabbit.classList.remove('is-swaying');
+        }
+      };
+
+      if (menu) {
+        menu.addEventListener('scroll', swayRabbitIfVisible, { passive: true });
+      }
 
       const closeMenu = () => {
         toggle.checked = false;
-        document.body.classList.remove('privacy-menu-open');
+        syncMenuState();
       };
 
       closeMenu();
       window.addEventListener('pageshow', closeMenu);
 
-      toggle.addEventListener('change', () => {
-        document.body.classList.toggle('privacy-menu-open', toggle.checked);
-      });
+      toggle.addEventListener('change', syncMenuState);
       document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && toggle.checked) {
           closeMenu();
         }
       });
+    })();
+  </script>
+  <script>
+    (() => {
+      const privacyPage = document.querySelector('.privacy-page');
+      if (!privacyPage) return;
+
+      const baseWidth = 375;
+      const mobileMaxWidth = 430;
+
+      const fitMobileCanvas = () => {
+        const viewportWidth = document.documentElement.clientWidth;
+        const renderedWidth = Math.min(viewportWidth, mobileMaxWidth);
+        const scale = renderedWidth / baseWidth;
+        privacyPage.style.zoom = scale;
+        privacyPage.style.setProperty(
+          '--mobile-menu-height',
+          `${window.innerHeight / scale - 56}px`
+        );
+      };
+
+      fitMobileCanvas();
+      window.addEventListener('resize', fitMobileCanvas, { passive: true });
     })();
   </script>
 </body>
