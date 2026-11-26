@@ -9,7 +9,7 @@
   <link rel="preload" as="image" href="group_fv_header@2x.png" fetchpriority="high" />
   <link rel="preload" as="image" href="img_fv_main@2x.png?v=20260725-245" fetchpriority="high" />
   <link rel="preload" as="image" href="img_fv_logo_pukumoji@2x.png?v=20260725-245" fetchpriority="high" />
-  <link rel="stylesheet" href="style.css?v=20261029-001" />
+  <link rel="stylesheet" href="style.css?v=20261126-001" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -747,12 +747,13 @@
       });
       const voiceDots = voiceDotsWrap.querySelectorAll('.voice-dot');
 
-      function setActiveDot() {
+      const setActiveDot = () => {
         const realIndex = (((currentIndex - 1) % cards.length) + cards.length) % cards.length;
         voiceDots.forEach((dot, i) => dot.classList.toggle('active', i === realIndex));
-      }
+      };
 
-      function moveVoice(animate = true) {
+      /* iOS 16のSafariでは if 文の中の function 宣言から track などを参照できずエラーになるため、const で定義する。 */
+      const moveVoice = (animate = true) => {
         track.classList.toggle('no-transition', !animate);
         const target = loopCards[currentIndex];
         if (!target) return;
@@ -760,19 +761,19 @@
         track.style.transform = `translate3d(${-centeredLeft}px, 0, 0)`;
         loopCards.forEach((card) => card.classList.toggle('is-current', card === target));
         setActiveDot();
-      }
+      };
 
-      function goNextVoice() {
+      const goNextVoice = () => {
         if (cards.length <= 1) return;
         currentIndex += 1;
         moveVoice(true);
-      }
+      };
 
-      function goPrevVoice() {
+      const goPrevVoice = () => {
         if (cards.length <= 1) return;
         currentIndex -= 1;
         moveVoice(true);
-      }
+      };
 
       track.addEventListener('transitionend', (event) => {
         if (event.propertyName !== 'transform') return;
@@ -790,16 +791,16 @@
         }
       });
 
-      function startAutoVoice() {
+      const startAutoVoice = () => {
         if (cards.length <= 1) return;
         window.clearInterval(autoTimer);
         autoTimer = window.setInterval(goNextVoice, 8500);
-      }
+      };
 
-      function restartAutoVoice() {
+      const restartAutoVoice = () => {
         window.clearInterval(autoTimer);
         startAutoVoice();
-      }
+      };
 
       voiceSlider.addEventListener('pointerdown', (event) => {
         pointerStartX = event.clientX;
